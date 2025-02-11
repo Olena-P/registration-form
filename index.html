@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="/registration-form/go-it.svg" />
+    <title>Реєстрація на вебінар</title>
+    <link rel="stylesheet" href="/src/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" crossorigin src="/registration-form/assets/index-fwvl6AOs.js"></script>
+    <link rel="stylesheet" crossorigin href="/registration-form/assets/index-sQLNUt50.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="/registration-form/go-it.svg" alt="GoIT" />
+      </div>
+    </header>
+
+    <main>
+      <section class="registration-section">
+        <div class="container">
+          <div class="webinar">
+            <div class="webinar__info">
+              <p class="webinar__label" aria-labelledby="webinarLabel">
+                Безоплатний вебінар
+              </p>
+              <p class="webinar__start">
+                Старт: <time datetime="2025-01-10T19:30">10 січня 19:30</time>
+              </p>
+            </div>
+
+            <h1 id="webinarLabel">
+              Навчіться створювати Excel-таблиці на pro-рівні
+            </h1>
+            <p class="webinar-description">
+              Опановуйте функціонал Microsoft Excel, автоматизуйте свою роботу
+              та створюйте таблиці швидко і в задоволення.
+            </p>
+            <img src="/registration-form/arrow.svg" alt="" class="webinar-arrow" />
+          </div>
+
+          <div class="registration-form-wrapper">
+            <h2>Реєструйся просто зараз</h2>
+            <div id="countdown" role="timer" aria-live="polite"></div>
+
+            <button id="registerBtn" class="register-btn">
+              Зареєструватися
+            </button>
+
+            <form
+              id="registrationForm"
+              class="registration-form"
+              aria-hidden="true"
+              aria-labelledby="registerBtn"
+            >
+              <label for="name" class="visually-hidden">Ім'я</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Введи своє ім'я"
+                required
+                aria-describedby="nameError"
+              />
+              <p id="nameError" class="error-message" aria-live="assertive"></p>
+
+              <label for="email" class="visually-hidden">E-mail</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Введи свій E-mail"
+                required
+                aria-describedby="emailError"
+              />
+              <p
+                id="emailError"
+                class="error-message"
+                aria-live="assertive"
+              ></p>
+
+              <label for="modal-phone" class="visually-hidden"
+                >Номер телефону</label
+              >
+              <div class="phone-input-wrapper">
+                <img
+                  src="/registration-form/ua-flag.svg"
+                  alt="Український прапор"
+                  class="flag-icon"
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  aria-describedby="phoneError"
+                  placeholder="+380 95 -- -- ---"
+                />
+              </div>
+              <p
+                id="phoneError"
+                class="error-message"
+                aria-live="assertive"
+              ></p>
+
+              <label class="checkbox-label">
+                <input type="checkbox" id="modal-agreement" required />
+                <span class="custom-checkbox"></span>
+                <span class="checkbox-text"
+                  >Згоден з <a href="#">Політикою конфіденційності</a> та
+                  <a href="#">Умовами користування послугами</a></span
+                >
+              </label>
+
+              <button type="submit">Зареєструватися</button>
+            </form>
+          </div>
+        </div>
+
+        <div
+          id="modal"
+          class="modal"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modalTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-content">
+            <button id="closeModal" class="close-modal" aria-label="Закрити">
+              <img src="/registration-form/close.svg" alt="Закрити" />
+            </button>
+
+            <img src="/registration-form/go-it.svg" alt="GoIT" />
+
+            <h2 id="modalTitle" class="modal-title">Реєструйся просто зараз</h2>
+            <div
+              id="modal-countdown"
+              role="timer"
+              aria-live="polite"
+              class="modal-countdown"
+            ></div>
+
+            <form id="modalForm" class="modal-form">
+              <label for="modal-name" class="visually-hidden">Ім'я</label>
+              <input
+                type="text"
+                id="modal-name"
+                name="name"
+                placeholder="Введи своє ім'я"
+                required
+                aria-describedby="modalNameError"
+              />
+              <p
+                id="modalNameError"
+                class="error-message"
+                aria-live="assertive"
+              ></p>
+
+              <label for="modal-email" class="visually-hidden">E-mail</label>
+              <input
+                type="email"
+                id="modal-email"
+                name="email"
+                placeholder="Введи свій E-mail"
+                required
+                aria-describedby="modalEmailError"
+              />
+              <p
+                id="modalEmailError"
+                class="error-message"
+                aria-live="assertive"
+              ></p>
+
+              <label for="phone" class="visually-hidden">Номер телефону</label>
+              <div class="phone-input-wrapper">
+                <img
+                  src="/registration-form/ua-flag.svg"
+                  alt="Український прапор"
+                  class="flag-icon"
+                />
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  aria-describedby="modalPhoneError"
+                  placeholder="+380 95 -- -- ---"
+                />
+              </div>
+              <p
+                id="modalPhoneError"
+                class="error-message"
+                aria-live="assertive"
+              ></p>
+
+              <label class="checkbox-label">
+                <input type="checkbox" id="modal-agreement" required />
+                <span class="custom-checkbox"></span>
+                <span
+                  >Згоден з <a href="#">Політикою конфіденційності</a> та
+                  <a href="#">Умовами користування послугами</a></span
+                >
+              </label>
+
+              <button type="submit">Зареєструватися</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <img class="decor-table" src="/registration-form/table-decor.svg" alt="" />
+    <img class="decor-rectangles" src="/registration-form/rectangles.svg" alt="" />
+
+  </body>
+</html>
+
+<script>
+  document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+    checkbox.addEventListener('change', function () {
+      const customCheckbox = this.nextElementSibling;
+      if (this.checked) {
+        customCheckbox.classList.add('checked');
+      } else {
+        customCheckbox.classList.remove('checked');
+      }
+    });
+  });
+</script>
