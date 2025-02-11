@@ -1,5 +1,6 @@
 {
   "name": "registration-form",
+  "homepage": "https://olena-p.github.io/registration-form/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,7 +9,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "format": "prettier --write .",
-    "test": "jest"
+    "test": "jest",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",
@@ -20,5 +23,8 @@
     "ts-jest": "^29.2.5",
     "typescript": "~5.7.2",
     "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
   }
 }
