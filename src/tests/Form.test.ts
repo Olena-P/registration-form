@@ -50,7 +50,6 @@ describe('Form Validation', () => {
     form.dispatchEvent(new Event('submit', { bubbles: true }));
     expect(phoneInput).toHaveClass('error');
 
-    // Перевіряємо повідомлення про помилку
     const phoneError = document.getElementById('phoneError');
     expect(phoneError).toHaveTextContent('Заповніть це поле');
   });
@@ -67,7 +66,6 @@ describe('Form Validation', () => {
 
     form.dispatchEvent(new Event('submit', { bubbles: true }));
 
-    // Чекаємо завершення обробки промісу
     await new Promise(process.nextTick);
 
     expect(global.fetch).toHaveBeenCalledWith(

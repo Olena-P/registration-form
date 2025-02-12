@@ -30,7 +30,12 @@
   }
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
+  position: relative;
   font-family: var(--font-family);
   background-color: #f1f1f1;
   color: var(--main-black);
@@ -46,10 +51,6 @@ header {
   @media (min-width: 1024px) {
     padding: 40px 0;
   }
-}
-
-main {
-  position: relative;
 }
 
 .container {
@@ -522,11 +523,14 @@ button {
 .decor-table {
   position: absolute;
   top: 0;
-  right: -300%;
+  right: -220%;
   width: auto;
   height: 100%;
   z-index: -3;
   min-height: 100%;
+  @media (min-width: 400px) {
+    right: -170%;
+  }
   @media (min-width: 768px) {
     right: -125%;
   }

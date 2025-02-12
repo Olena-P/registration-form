@@ -3,7 +3,6 @@ export function validateForm(form: HTMLFormElement): void {
     event.preventDefault();
     let valid = true;
 
-    // Скидання попередніх помилок
     form.querySelectorAll('.error-message').forEach((errorElement) => {
       errorElement.textContent = '';
     });
@@ -11,7 +10,6 @@ export function validateForm(form: HTMLFormElement): void {
       input.classList.remove('error');
     });
 
-    // Валідація номеру телефону
     const phoneInputs = form.querySelectorAll(
       'input[type="tel"]',
     ) as NodeListOf<HTMLInputElement>;
@@ -20,7 +18,7 @@ export function validateForm(form: HTMLFormElement): void {
       const errorElement = document.getElementById(
         phoneInput.getAttribute('aria-describedby')!,
       );
-      const sanitizedPhone = phoneInput.value.replace(/\D/g, ''); // Видаляємо нецифрові символи
+      const sanitizedPhone = phoneInput.value.replace(/\D/g, '');
 
       if (phoneInput.required && !phoneInput.value.trim()) {
         phoneInput.classList.add('error');
@@ -35,7 +33,6 @@ export function validateForm(form: HTMLFormElement): void {
       }
     });
 
-    // Відправлення форми, якщо валідна
     if (valid) {
       const formData = new FormData(form);
       fetch('https://example.com/register', {

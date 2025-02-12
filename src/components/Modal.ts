@@ -9,7 +9,6 @@ export function initModal() {
     modal.setAttribute('aria-hidden', 'false');
     modal.style.display = 'block';
 
-    // Додаємо перевірку на наявність input
     const firstInput = modal.querySelector('input') as HTMLInputElement | null;
     if (firstInput) {
       firstInput.focus();
