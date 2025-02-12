@@ -20,12 +20,16 @@ export function validateForm(form: HTMLFormElement): void {
       );
       const sanitizedPhone = phoneInput.value.replace(/\D/g, '');
 
+      phoneInput.setCustomValidity(''); // Скидання попередніх помилок
+
       if (phoneInput.required && !phoneInput.value.trim()) {
         phoneInput.classList.add('error');
+        phoneInput.setCustomValidity('Заповніть це поле'); // Додаємо валідацію
         if (errorElement) errorElement.textContent = 'Заповніть це поле';
         valid = false;
       } else if (!/^380\d{9}$/.test(sanitizedPhone)) {
         phoneInput.classList.add('error');
+        phoneInput.setCustomValidity('Неправильний формат телефону'); // Додаємо валідацію
         if (errorElement)
           errorElement.textContent =
             'Неправильний формат телефону. Використовуйте формат +380123456789';
